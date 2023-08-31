@@ -14,8 +14,19 @@ const App = () => {
   
   return (
     <div className="App">
-      <h1>{numb}</h1>
-        <button></button>
+      <div className="calculator">
+        <div className='display'>
+          <h1>{numb}</h1>
+        </div>
+        <div className='buttonArray'>
+          {buttons.map((button) => {
+            return (
+              <button className='sums'>{button}</button>
+            )
+          })
+        }
+        </div>
+      </div>
     </div>
   );
 };
