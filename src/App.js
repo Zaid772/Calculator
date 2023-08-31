@@ -6,12 +6,18 @@ const App = () => {
 
   const[numb, setNumb] = useState("");
 
-  const buttons = ["7","8","9","C","4","5","6", "x", "1", "2", "3", "/", "0", "+", "-", "="];
+  const buttons = ["7","8","9","C","4","5","6", "*", "1", "2", "3", "/", "0", "+", "-", "="];
 
-  const handleCLick = buttons.map((val) => {
-    return val
-  });
-  
+  const handleClick = (string) => {
+    if (string == "=") {
+      setNumb(evaluate(numb))
+    } else if (string == "C") {
+      setNumb("")
+    } else {
+      setNumb(numb + string)
+    }
+  };
+
   return (
     <div className="App">
       <div className="calculator">
@@ -21,7 +27,7 @@ const App = () => {
         <div className='buttonArray'>
           {buttons.map((button) => {
             return (
-              <button className='sums'>{button}</button>
+              <button className='sums' onClick={() => handleClick(button)}>{button}</button>
             )
           })
         }
