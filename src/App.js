@@ -4,7 +4,7 @@ import { evaluate } from 'mathjs';
 
 const App = () => {
 
-  const[numb, setNumb] = useState("");
+  const[numb, setNumb] = useState("0");
 
   const buttons = ["7","8","9","C","4","5","6", "*", "1", "2", "3", "/", "0", "+", "-", "="];
 
@@ -27,7 +27,7 @@ const App = () => {
         <div className='buttonArray'>
           {buttons.map((button) => {
             return (
-              <button className='sums' onClick={() => handleClick(button)}>{button}</button>
+              <button className='clicks' onClick={() => handleClick(button)}>{button}</button>
             )
           })
         }
